@@ -108,7 +108,7 @@ export default function PlayerControls({
 
       {/* Main Floating Player Dock */}
       <div
-        className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-30 w-[90%] max-w-lg transition-all duration-1000 transform select-none ${
+        className={`fixed bottom-16 md:bottom-8 left-1/2 -translate-x-1/2 z-30 w-[90%] max-w-lg transition-all duration-1000 transform select-none ${
           visible
             ? 'opacity-100 translate-y-0 pointer-events-auto'
             : 'opacity-0 translate-y-4 pointer-events-none'
