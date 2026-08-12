@@ -1,0 +1,91 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+@theme {
+  --color-retro-bg: #06202B;
+  --color-retro-cream: #FDEB9E;
+  --color-retro-mint: #7AE2CF;
+  --color-retro-teal: #077A7D;
+
+  --font-sans: "Outfit", "Inter", sans-serif;
+  --font-serif: "Playfair Display", "Georgia", serif;
+
+  --animate-fade-in: fadeIn 1s ease-out forwards;
+  --animate-fade-out: fadeOut 1s ease-out forwards;
+  --animate-pulse-subtle: pulseSubtle 3s infinite ease-in-out;
+
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeOut {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(10px); }
+  }
+  @keyframes pulseSubtle {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+  }
+}
+
+@utility bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+@utility bg-scanlines {
+  background: linear-gradient(
+    rgba(6, 32, 43, 0) 50%, 
+    rgba(6, 32, 43, 0.25) 50%
+  );
+  background-size: 100% 4px;
+}
+
+@utility bg-radial-gradient {
+  background: radial-gradient(
+    circle, 
+    transparent 20%, 
+    rgba(6, 32, 43, 0.95) 100%
+  );
+}
+
+@layer base {
+  body {
+    @apply bg-retro-bg text-retro-cream antialiased overflow-hidden select-none;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom HTML5 slider inputs styling reset for chrome, safari, firefox */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #FDEB9E; /* retro-cream */
+    cursor: pointer;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background: #FDEB9E;
+    cursor: pointer;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #077A7D;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7AE2CF;
+}
