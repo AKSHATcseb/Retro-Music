@@ -1,0 +1,26 @@
+{
+  "short_name": "Retro Music",
+  "name": "Retro Music - Ambient Lo-Fi",
+  "icons": [
+    {
+      "src": "/retro.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/retro.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/retro.png",
+      "type": "image/png",
+      "sizes": "648x648"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#06202B",
+  "theme_color": "#06202B",
+  "display": "standalone",
+  "orientation": "portrait"
+}
